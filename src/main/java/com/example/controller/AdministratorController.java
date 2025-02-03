@@ -14,8 +14,6 @@ import com.example.form.InsertAdministratorForm;
 import com.example.form.LoginForm;
 import com.example.service.AdministratorService;
 
-import jakarta.servlet.ServletContext;
-
 import jakarta.servlet.http.HttpSession;
 
 /**
@@ -101,11 +99,6 @@ public class AdministratorController {
 	 * @param form 管理者情報用フォーム
 	 * @return ログイン後の従業員一覧画面
 	 */
-
-	 @Autowired
-    private ServletContext application;
-
-
 	@PostMapping("/login")
 	public String login(LoginForm form, RedirectAttributes redirectAttributes) {
 		Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
@@ -114,9 +107,8 @@ public class AdministratorController {
 			return "redirect:/";
 		}
 
-		
-		application.setAttribute("administrator",administrator);
-
+		// ログイン成功時にセッションにユーザー名をセット
+		session.setAttribute("headerUserName", administrator.getName());
 		return "redirect:/employee/showList";
 	}
 
@@ -134,6 +126,4 @@ public class AdministratorController {
 		return "redirect:/";
 	}
 
-
 }
-
