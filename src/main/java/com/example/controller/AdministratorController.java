@@ -106,6 +106,9 @@ public class AdministratorController {
 			redirectAttributes.addFlashAttribute("errorMessage", "メールアドレスまたはパスワードが不正です。");
 			return "redirect:/";
 		}
+
+		// ログイン成功時にセッションにユーザー名をセット
+		session.setAttribute("headerUserName", administrator.getName());
 		return "redirect:/employee/showList";
 	}
 
