@@ -2,180 +2,184 @@ package com.example.domain;
 
 import java.util.Date;
 
+
 /**
  * 従業員情報を表すドメイン.
  * 
  * @author igamasayuki
  * 
  */
+
 public class Employee {
-	/** id */
-	private Integer id;
-	/** 従業員名 */
-	private String name;
-	/** 画像 */
-	private String image;
-	/** 性別 */
-	private String gender;
-	/** 入社日 */
-	private Date hireDate;
-	/** メールアドレス */
-	private String mailAddress;
-	/** 郵便番号 */
-	private String zipCode;
-	/** 住所 */
-	private String address;
-	/** 電話番号 */
-	private String telephone;
-	/** 給料 */
-	private Integer salary;
-	/** 特性 */
-	private String characteristics;
-	/** 扶養人数 */
-	private Integer dependentsCount;
+    /** id */
 
-	/**
-	 * 引数無しのコンストラクタ.
-	 */
-	public Employee() {
-	}
 
-	/**
-	 * 初期化用コンストラクタ.
-	 * 
-	 * @param id              ID
-	 * @param name            従業員名
-	 * @param image           画像
-	 * @param gender          性別
-	 * @param hireDate        入社日
-	 * @param mailAddress     メールアドレス
-	 * @param zipCode         郵便番号
-	 * @param address         住所
-	 * @param telephone       電話番号
-	 * @param salary          給料
-	 * @param characteristics 特性
-	 * @param dependentsCount 扶養人数
-	 */
-	public Employee(Integer id, String name, String image, String gender, Date hireDate, String mailAddress,
-			String zipCode, String address, String telephone, Integer salary, String characteristics,
-			Integer dependentsCount) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.image = image;
-		this.gender = gender;
-		this.hireDate = hireDate;
-		this.mailAddress = mailAddress;
-		this.zipCode = zipCode;
-		this.address = address;
-		this.telephone = telephone;
-		this.salary = salary;
-		this.characteristics = characteristics;
-		this.dependentsCount = dependentsCount;
-	}
+    private Integer id;
+    /** 従業員名 */
+    private String name;
+    /** 画像 */
+    private String image;
+    /** 性別 */
+    private String gender;
+    /** 入社日 */
+    private Date hireDate;
+    /** メールアドレス */
+    private String mailAddress;
+    /** 郵便番号 */
+    private String zipCode;
+    /** 住所 */
+    private String address;
+    /** 電話番号 */
+    private String telephone;
+    /** 給料 */
+    private Integer salary;
+    /** 特性 */
+    private String characteristics;
+    /** 扶養人数 */
+    private Integer dependentsCount;
 
-	public Integer getId() {
-		return id;
-	}
+    /**
+     * 引数無しのコンストラクタ.
+     */
+    public Employee() {
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    /**
+     * 初期化用コンストラクタ.
+     * 
+     * @param id              ID
+     * @param name            従業員名
+     * @param image           画像
+     * @param gender          性別
+     * @param hireDate        入社日
+     * @param mailAddress     メールアドレス
+     * @param zipCode         郵便番号
+     * @param address         住所
+     * @param telephone       電話番号
+     * @param salary          給料
+     * @param characteristics 特性
+     * @param dependentsCount 扶養人数
+     */
+    public Employee(Integer id, String name, String image, String gender, Date hireDate, String mailAddress,
+            String zipCode, String address, String telephone, Integer salary, String characteristics,
+            Integer dependentsCount) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.gender = gender;
+        this.hireDate = hireDate;
+        this.mailAddress = mailAddress;
+        this.zipCode = zipCode;
+        this.address = address;
+        this.telephone = telephone;
+        this.salary = salary;
+        this.characteristics = characteristics;
+        this.dependentsCount = dependentsCount;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-	public Date getHireDate() {
-		return hireDate;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setHireDate(Date hireDate) {
-		this.hireDate = hireDate;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public String getMailAddress() {
-		return mailAddress;
-	}
+    public Date getHireDate() {
+        return hireDate;
+    }
 
-	public void setMailAddress(String mailAddress) {
-		this.mailAddress = mailAddress;
-	}
+    public void setHireDate(Date hireDate) {
+        this.hireDate = hireDate;
+    }
 
-	public String getZipCode() {
-		return zipCode;
-	}
+    public String getMailAddress() {
+        return mailAddress;
+    }
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
+    public void setMailAddress(String mailAddress) {
+        this.mailAddress = mailAddress;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getZipCode() {
+        return zipCode;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 
-	public String getTelephone() {
-		return telephone;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public Integer getSalary() {
-		return salary;
-	}
+    public String getTelephone() {
+        return telephone;
+    }
 
-	public void setSalary(Integer salary) {
-		this.salary = salary;
-	}
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
-	public String getCharacteristics() {
-		return characteristics;
-	}
+    public Integer getSalary() {
+        return salary;
+    }
 
-	public void setCharacteristics(String characteristics) {
-		this.characteristics = characteristics;
-	}
+    public void setSalary(Integer salary) {
+        this.salary = salary;
+    }
 
-	public Integer getDependentsCount() {
-		return dependentsCount;
-	}
+    public String getCharacteristics() {
+        return characteristics;
+    }
 
-	public void setDependentsCount(Integer dependentsCount) {
-		this.dependentsCount = dependentsCount;
-	}
+    public void setCharacteristics(String characteristics) {
+        this.characteristics = characteristics;
+    }
 
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", image=" + image + ", gender=" + gender + ", hireDate="
-				+ hireDate + ", mailAddress=" + mailAddress + ", zipCode=" + zipCode + ", address=" + address
-				+ ", telephone=" + telephone + ", salary=" + salary + ", characteristics=" + characteristics
-				+ ", dependentsCount=" + dependentsCount + "]";
-	}
+    public Integer getDependentsCount() {
+        return dependentsCount;
+    }
+
+    public void setDependentsCount(Integer dependentsCount) {
+        this.dependentsCount = dependentsCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee [id=" + id + ", name=" + name + ", image=" + image + ", gender=" + gender + ", hireDate="
+                + hireDate + ", mailAddress=" + mailAddress + ", zipCode=" + zipCode + ", address=" + address
+                + ", telephone=" + telephone + ", salary=" + salary + ", characteristics=" + characteristics
+                + ", dependentsCount=" + dependentsCount + "]";
+    }
 
 }
