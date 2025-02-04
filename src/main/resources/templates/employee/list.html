@@ -67,7 +67,7 @@
               </li>
             </ul>
             <p class="navbar-text navbar-right">
-              <span th:text="${administratorName}">山田太郎</span
+              <span th:text="${headerUserName}">山田太郎</span
               >さんこんにちは！ &nbsp;&nbsp;&nbsp;
               <a
                 href="../administrator/login.html"
@@ -97,34 +97,39 @@
           <!-- ここから上を編集する必要はありません -->
 
           <!-- ここにモックのtable要素を貼り付けます -->
+        
+          <form action="/employee/showList" method="get" class="text-right">
+            <input type="text" name="search" th:value="${search}" placeholder="あいまい検索">
+            <button type="submit">検索</button>
+        </form>
+        
+        <!-- 従業員一覧の表示 -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>従業員名</th>
+              <th>入社日</th>
+              <th>扶養人数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="employee : ${employeeList}">
+              <td>
+                <a href="detail.html" th:href="@{'/employee/showDetail?id=' + ${employee.id}}">
+                  <span th:text="${employee.name}"></span>
+                </a>
+              </td>
+              <td>
+                <span th:text="${employee.hireDate}"></span>
+              </td>
+              <td>
+                <span th:text="${employee.dependentsCount} + '人'"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>従業員名</th>
-                <th>入社日</th>
-                <th>扶養人数</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr th:each="employee : ${employeeList}">
-                <td>
-                  <a
-                    href="detail.html"
-                    th:href="@{'/employee/showDetail?id=' + ${employee.id}}"
-                  >
-                    <span th:text="${employee.name}">山田太郎</span>
-                  </a>
-                </td>
-                <td>
-                  <span th:text="${employee.hireDate}">2016/12/1</span>
-                </td>
-                <td>
-                  <span th:text="${employee.dependentsCount} + '人'">3人</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        
 
           <!-- ここから下を編集する必要はありません -->
         </div>
