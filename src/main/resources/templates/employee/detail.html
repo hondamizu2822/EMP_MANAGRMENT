@@ -109,11 +109,10 @@
                 <legend>従業員情報</legend>
                 <table class="table table-striped">
                   <tr>
-                    <th nowrap>従業員名</th>
-                    <td>
-                      <span th:utext="${employee.name}">山田花子</span>
-                    </td>
-                  </tr>
+                      <th nowrap>従業員名</th>
+                      <td>
+                        <input type="text" name="name" class="form-control" th:value="${employee.name}" required />
+                      </td>
                   <tr>
                     <th nowrap>写真</th>
                     <td>
@@ -126,59 +125,54 @@
                   <tr>
                     <th nowrap>性別</th>
                     <td>
-                      <span th:utext="${employee.gender}">女性</span>
+                      <select name="gender" class="form-control">
+                        <option value="男性" th:selected="${employee.gender == '男性'}">男性</option>
+                        <option value="女性" th:selected="${employee.gender == '女性'}">女性</option>
+                      </select>
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>入社日</th>
                     <td>
-                      <span th:utext="${employee.hireDate}">2012/11/29</span>
+                      <input type="date" name="hireDate" class="form-control" th:value="${employee.hireDate}" required />
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>メールアドレス</th>
                     <td>
-                      <span th:utext="${employee.mailAddress}"
-                        >yamada@sample.com</span
-                      >
+                      <input type="email" name="mailAddress" class="form-control" th:value="${employee.mailAddress}" required />
                     </td>
-                  </tr>
+                  </tr>                  
                   <tr>
                     <th nowrap>郵便番号</th>
                     <td>
-                      <span th:utext="${employee.zipCode}">111-1111</span>
+                      <input type="text" name="zipCode" class="form-control" th:value="${employee.zipCode}" required />
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>住所</th>
                     <td>
-                      <span th:utext="${employee.address}"
-                        >東京都新宿区1-1-1</span
-                      >
+                      <input type="text" name="address" class="form-control" th:value="${employee.address}" required />
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>電話番号</th>
                     <td>
-                      <span th:utext="${employee.telephone}"
-                        >090-0000-0000</span
-                      >
+                      <input type="text" name="telephone" class="form-control" th:value="${employee.telephone}" required />
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>給料</th>
                     <td>
-                      <span th:utext="${employee.salary + '円'}">400000円</span>
+                      <input type="number" name="salary" class="form-control" th:value="${employee.salary}" required />
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>特性</th>
                     <td>
-                      <span th:utext="${employee.characteristics}"
-                        >明るく素直な性格です。リーダーシップを発揮します。新卒社員研修の時はグループ開発の時にリーダーを買ってでました。積極性も人間性も抜群です。周りに対する不満も聞いたことがありません。</span
-                      >
+                      <textarea name="characteristics" class="form-control" required>[</textarea>
                     </td>
-                  </tr>
+                  </tr>                  
                   <tr>
                     <th nowrap>扶養人数</th>
                     <td>
@@ -213,6 +207,21 @@
                 <button type="submit" class="btn btn-primary">更新</button>
               </fieldset>
             </form>
+            <!-- <form action="/employee/update" method="post">
+              <input type="hidden" name="id" value="${employee.id}">
+              
+              <label for="name">名前</label>
+              <input type="text" id="name" name="name" value="${employee.name}">
+              <span class="error">${errorMessageName}</span>
+          
+              <label for="dependentsCount">扶養人数</label>
+              <input type="number" id="dependentsCount" name="dependentsCount" value="${employee.dependentsCount}">
+              
+              <button type="submit">更新</button>
+          </form> -->
+          
+
+
 
             <!-- ここから下を編集する必要はありません -->
           </div>
